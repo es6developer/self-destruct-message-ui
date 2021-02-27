@@ -1,0 +1,36 @@
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+        <div class="card register-card">
+            <div class="row no-gutters">
+                <div class="col-md-5">
+                    <img src="assets/images/register.png" alt="register" class="register-card-img">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <div class="brand-wrapper">
+                            <img src="assets/images/logo1.png" alt="logo" class="logo">
+                        </div>
+                        <p class="register-card-description">Sign into your account</p>
+                        <form [formGroup]="registerForm" (submit)="registerUser()">
+                            <div class="form-group">
+                                <label for="name" class="sr-only">Username</label>
+                                <input type="text" formControlName="userName" name="name" id="name" class="form-control" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="fullName" class="sr-only">Fullname</label>
+                                <input type="email" formControlName="fullName" name="fullName" id="fullName" class="form-control" placeholder="Full Name">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="password" class="sr-only">Password</label>
+                                <input type="password" formControlName="password" name="password" id="password" class="form-control" placeholder="***********">
+                            </div>
+                            <button name="register" id="register" class="btn btn-block register-btn mb-4" type="submit">Register</button>
+                        </form>
+                        <p class="register-card-footer-text">Already have an account? <a routerLink="/admin/login" class="text-reset">Login here</a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

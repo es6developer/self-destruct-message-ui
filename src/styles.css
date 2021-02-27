@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.css';
+@import '~@swimlane/ngx-datatable/themes/material.css';
+@import '~@swimlane/ngx-datatable/themes/dark.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+.primary-bg {
+    background-color: #04BF74 !important;
+    color: #fff !important;
+}
+
+.primary-text {
+    color: #04BF74;
+}
+
+body {
+    margin: 0 !important;
+    background-color: lightgrey;
+    overflow-x: hidden;
+}
+
+.datatable-header {
+    background: #424242;
+    width: 100%;
+    color: #fff;
+}
+
+.datatable-icon-sort-unset {
+    display: none !important;
+}
+
+.datatable-header-cell {
+    border-right: 1px solid #fff !important;
+}
+
+.datatable-row-center {
+    border-right: 1px solid grey;
+}
+
+.datatable-body-cell {
+    border-left: 1px solid grey !important;
+}
+
+.datatable-body-cell-label {
+    text-transform: capitalize !important;
+    margin-top: -4px;
+}

@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="main-content">
+        <h2 class="create-message">
+            Create a disappearing <span class="selected-text">{{formData.type}}.</span>
+        </h2>
+        <div class="row selector">
+            <div class="col-md- col-lg-3 col-sm-4 col-6">
+                <div class='box-message' [ngClass]="{'selected-type':formData.type=='message'}" (click)="chooseType('message')">
+                    Message
+                </div>
+            </div>
+            <div class="col-md-4 col-md-3 col-lg-3 col-sm-4 col-6">
+                <div class='box-message' [ngClass]="{'selected-type':formData.type=='link'}" (click)="chooseType('link')">
+                    Link
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="destruct col-md-6 col-lg-4 col-sm-12 col-xs-12">
+                <h3>Disappear the {{formData.type}} in ?</h3>
+                <div class="select">
+                    <select class="destruct-select form-control" [(ngModel)]="expiry">
+            <option value="60">1 Minute</option>
+            <option value="600">10 Minutes</option>
+            <option value="3600">1 Hour</option>
+            <option value="86400">1 Day</option>
+            <option value="604800">1 Week</option>
+          </select>
+
+                </div>
+            </div>
+        </div>
+        <div class="row forms">
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                <input type="text" [placeholder]="placeHolderText" [(ngModel)]="formData.message" class="form-control input-link-message">
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-12"><button (click)="submit()" class="btn  button-generate primary-bg">Generate</button></div>
+
+
+        </div>
+    </div>
+    <div>
+        <div class="about-text">
+            <h2>About</h2>
+            <p>
+                Disappearing URLs and messages!
+            </p>
+            <p>
+                Create short, temporary, self-destructing messages and links that automatically expire in anywhere from a minute to a week.
+            </p>
+
+
+        </div>
+    </div>
+</div>
+<div class="overlay" *ngIf="isShowOverlay">
+    <div class="close-icon" (click)="closePopUp()">
+        <span>Close</span>
+    </div>
+    <div class="text-center">
+        <h4>Your {{formData.type}} has been created!</h4>
+    </div>
+
+    <div class="link">
+        <a href="{{currentURL}}" target="_blank">
+            <span>{{currentURL}}</span>
+        </a>
+    </div>
+    <div class="copy-to-clipboard" (click)="copyToClipboard(currentURL)">
+        <span>Copy to clipboard</span>
+    </div>
+</div>

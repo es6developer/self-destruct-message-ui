@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="main-content">
+        <h2 class="create-message">
+            List disappearing Messages and Links
+        </h2>
+        <div class="filterList">
+            <b>Filter Data</b><br><br>
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-3">
+                    <div class="filter-type" [ngClass]="{'selected-type': selectedType == 'message'}" (click)="selectType('message')">Message</div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-3 border-right">
+                    <div class="filter-type" [ngClass]="{'selected-type': selectedType == 'link'}" (click)="selectType('link')">Link</div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-3 ">
+                    <div class="filter-type" [ngClass]="{'selected-type': expiryType}" (click)="selectExpiry(true)">Expired</div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-3" [ngClass]="{'selected-type': !expiryType}" (click)="selectExpiry(false)">
+                    <div class="filter-type">Not-Expired</div>
+                </div>
+            </div>
+        </div>
+        <div class="mar-top-2">
+            <strong>
+              <span class="text-selected">{{selectedType}} </span>- <span class="text-selected"> {{expiryType ?'Expired':'Not-Expired'}} - ({{page.totalPages}} records)</span>
+            </strong>
+
+            <button class="align-right btn btn-sm primary-bg" (click)="refreshData()"><i class="fa fa-refresh" ></i> Refresh</button>
+
+
+        </div>
+        <div class="table-list">
+            <table class="points_table">
+                <thead>
+                    <tr>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-7">Type</th>
+                        <th class="col-xs-1">Expiry In</th>
+                        <th class="col-xs-1">Expiry In Date</th>
+                        <th class="col-xs-1">Message/Link</th>
+                        <th class="col-xs-1">Is Expired</th>
+                    </tr>
+                </thead>
+
+                <tbody class="points_table_scrollbar">
+                    <tr class="odd" *ngFor="let data of messagesData;let i=index">
+                        <td class="col-xs-1">{{i+1}}</td>
+                        <td class="col-xs-7">{{data.type}}</td>
+                        <td class="col-xs-1">{{data.expiry|expiryTime}}</td>
+                        <td class="col-xs-1">{{data.expiry| date:'medium'}}</td>
+                        <td class="col-xs-1">{{data.message}}</td>
+                        <td class="col-xs-1">{{data.isExpired?'Yes':'No'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="overlay" *ngIf="isShowContent">
+
+    <div class="redirect-text" routerLink="/home">
+        <span>Create your own Link/Message </span>
+    </div>
+
+    <div class="message">
+        <span>{{messageData.message}}</span>
+    </div>
+    <div class="monkey-image">
+        <img src="https://img.pngio.com/monkey-icons-noun-project-monkey-black-and-white-png-200_200.png" width="60px"> </div>
+
+    <div class="timeout" *ngIf="timeoutText !=null">
+        {{timeoutText}}
+    </div>
+</div>
+
+<div class="loading" *ngIf="!isShowContent">
+    Loading...
+</div>

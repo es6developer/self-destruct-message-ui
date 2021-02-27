@@ -1,0 +1,110 @@
+.overlay {
+    width: 100%;
+    height: 100Vh;
+}
+
+.overlay h4 {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 3em;
+    color: #fff;
+}
+
+.overlay .timeout {
+    background-color: #04BF74;
+    border-radius: 60px;
+    padding: 13px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    /* bottom: 18px; */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 10% auto;
+}
+
+.redirect-text {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: #04BF74;
+    cursor: pointer;
+    font-weight: bolder;
+    width: 20%;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.message {
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+    font-size: calc(22px + 2vw);
+    color: #fff;
+    background: #04BF74;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 800px;
+    width: fit-content;
+    margin: 5% auto 5% auto;
+    transform: translateY(24px);
+}
+
+.message::after {
+    content: '';
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 16px solid transparent;
+    border-top-color: #04BF74
+}
+
+.monkey-image {
+    text-align: center;
+}
+
+.monkey-image img {
+    width: 200px;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .redirect-text {
+        width: 50% !important;
+    }
+    .message {
+        font-size: 16px !important;
+        max-width: 90% !important;
+        margin-top: 13% !important;
+    }
+    .monkey-image {
+        margin-top: 10% !important
+    }
+    .timeout {
+        margin-top: 24% !important;
+    }
+}
+
+
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .redirect-text {
+        width: 50% !important;
+    }
+    .message {
+        font-size: 16px !important;
+        max-width: 90% !important;
+        margin-top: 13% !important;
+    }
+    .monkey-image {
+        margin-top: 10% !important
+    }
+    .timeout {
+        margin-top: 24% !important;
+    }
+}
