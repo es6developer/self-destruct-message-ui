@@ -144,6 +144,7 @@
     .main-content {
         width: 100% !important;
         padding: 5% 4% 3% 6% !important;
+        overflow-x: hidden;
     }
     .selector div {
         margin-top: 5px !important;
@@ -164,8 +165,8 @@
         padding-top: 4% !important;
     }
     .link {
-        width: 92% !important;
-        font-size: 18px !important;
+        width: 80% !important;
+        font-size: 17px !important;
         margin-left: 7px!important;
     }
     .link a {
@@ -183,6 +184,7 @@
     .main-content {
         width: 100% !important;
         padding: 5% 4% 3% 6% !important;
+        overflow-x: hidden;
     }
     .selector div {
         margin-top: 5px !important;
@@ -207,8 +209,8 @@
         padding-top: 6% !important;
     }
     .link {
-        width: 92% !important;
-        font-size: 18px !important;
+        width: 80% !important;
+        font-size: 17px !important;
         margin-left: 7px!important;
     }
     .link a {
@@ -226,6 +228,7 @@
     .main-content {
         width: 100% !important;
         padding: 5% 4% 3% 6% !important;
+        overflow-x: hidden;
     }
     .selector div {
         margin-top: 5px !important;
@@ -254,8 +257,8 @@
         font-size: 18px;
     }
     .link a {
-        width: 92% !important;
-        font-size: 18px !important;
+        width: 80% !important;
+        font-size: 17px !important;
         margin-left: 7px!important;
     }
     .close-icon {

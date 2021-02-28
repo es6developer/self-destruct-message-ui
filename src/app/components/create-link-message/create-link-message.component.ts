@@ -18,6 +18,7 @@ export class CreateLinkMessageComponent implements OnInit {
   expiry: number = 60
   formData: LinkMessageForm = { expiry: 60, message: null, type: "message" }
   currentURL: string = "";
+  isSubmitted: Boolean = false;
 
   constructor(private apiService: ApiService, private toast: ToastrService) {
     this.currentURL = window.location.origin;
@@ -43,9 +44,11 @@ export class CreateLinkMessageComponent implements OnInit {
 
   resetForm = () => {
     this.formData = { expiry: 60, message: null, type: "message" };
+    this.isSubmitted = false;
   }
 
   submit = () => {
+
     this.currentURL = window.location.origin;
     if (this.formData.message != null) {
       if (this.formData.type == "link") {
@@ -56,17 +59,19 @@ export class CreateLinkMessageComponent implements OnInit {
           return this.toast.error("Please enter valid Url")
         }
       }
-
       var today = new Date();
       today.setSeconds(today.getSeconds() + Number(this.expiry));
       this.formData.expiry = today.valueOf();
+      this.isSubmitted = true;
       this.apiService._post('link-message', this.formData).subscribe((response) => {
         if (response.status) {
           this.currentURL = `${this.currentURL}/view/${response.data.refId}`
           this.isShowOverlay = true;
+
         } else {
           this.toast.error(response.message);
         }
+        this.isSubmitted = false;
       }, error => {
         this.toast.error("Something went wrong!, Please try again.");
       })
